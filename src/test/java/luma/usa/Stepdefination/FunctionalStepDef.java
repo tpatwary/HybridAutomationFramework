@@ -9,54 +9,75 @@ import org.openqa.selenium.interactions.Actions;
 import io.cucumber.java.en.*;
 
 import luma.usa.BasePage.SuperClass;
+import luma.usa.elementsPage.PageFactoryElements;
+import luma.usa.genaricfunctions.CommonMethods;
+import luma.usa.genaricfunctions.WaitHelper;
 
 public class FunctionalStepDef extends SuperClass {
+	PageFactoryElements pf;
 
 	@Given("user able to login the application")
 	public void user_able_to_login_the_application() throws InterruptedException {
-		initialization();
+		initialization(); //
+		pf = new PageFactoryElements();
+		pf.applicationLogin();
+
 	}
 
 	@When("user able to select Jackets from Men module")
 	public void user_able_to_select_jackets_from_men_module() {
-		
-		// How to handle MouseHover
-		Actions ac = new Actions(driver);
-		WebElement Men_obj = driver.findElement(By.linkText("Men"));
-		ac.moveToElement(Men_obj).build().perform();
-		
-		WebElement tops_obj = driver.findElement(By.linkText("Tops"));
-		ac.moveToElement(tops_obj).build().perform();
-		// action class click
-		WebElement Jackets_obj = driver.findElement(By.linkText("Jackets"));
-		ac.click(Jackets_obj).build().perform();
-		
-		
-	
+
+		WaitHelper.seleniumWait(pf.getSelectMenModule());
+		CommonMethods.HoverOver(pf.getSelectMenModule());
+
+		WaitHelper.seleniumWait(pf.getSelectTopsFromMenModule());
+		CommonMethods.HoverOver(pf.getSelectTopsFromMenModule());
+
+		WaitHelper.seleniumWait(pf.getSelectJacketFromMenModule());
+		CommonMethods.actionClick(pf.getSelectJacketFromMenModule());
+
 	}
 
 	@When("user able to select a Jacket product's size, color, quantity")
-	public void user_able_to_select_a_jacket_product_s_size_color_quantity() {
+	public void user_able_to_select_a_jacket_product_s_size_color_quantity() throws InterruptedException {
+
+		CommonMethods.actionClick(pf.getSelectJupiterAll_WeatherTrainer());
+		WaitHelper.seleniumWait(pf.getSelectSize());
+		CommonMethods.actionClick(pf.getSelectSize());
+
+		WaitHelper.seleniumWait(pf.getSelectColor());
+		CommonMethods.actionClick(pf.getSelectColor());
+
+		WaitHelper.seleniumWait(pf.getSelectQuantity());
+		pf.getSelectQuantity().clear();// clear the existing value
+		pf.getSelectQuantity().sendKeys("1");
 
 	}
 
 	@When("user able to click add to cart button")
 	public void user_able_to_click_add_to_cart_button() {
 
+		WaitHelper.seleniumWait(pf.getClickOnAddtoCart());
+		CommonMethods.actionClick(pf.getClickOnAddtoCart());
 	}
 
 	@When("user able to click on the shopping cart pop-up")
 	public void user_able_to_click_on_the_shopping_cart_pop_up() {
 
+		WaitHelper.seleniumWait(pf.getClickShoppingCart());
+		CommonMethods.actionClick(pf.getClickShoppingCart());
+
 	}
 
 	@When("user able to click on the proceed to checkout")
 	public void user_able_to_click_on_the_proceed_to_checkout() {
-
+		WaitHelper.seleniumWait(pf.getProceed_to_Checkout());
+		CommonMethods.actionClick(pf.getProceed_to_Checkout());
 	}
 
 	@When("user able to add shipping information")
 	public void user_able_to_add_shipping_information() {
+		pf.addNewShippingDetails();
 
 	}
 

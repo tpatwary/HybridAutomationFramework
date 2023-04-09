@@ -1,61 +1,16 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 1.104 s <<< FAILURE! - in TestSuite
-luma.usa.myrunnertest.MyRunner.runScenario["user able to select the product, add to cart, add shipping information, place order, & verify the order confirmation number", "Optional[user able to purchase the product and verify the order confirmation]"](1)  Time elapsed: 0.123 s  <<< FAILURE!
-io.cucumber.testng.UndefinedStepException: 
-The step 'user able to login the application' and 9 other step(s) are undefined.
-You can implement these steps using the snippet(s) below:
-
-@Given("user able to login the application")
-public void user_able_to_login_the_application() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@When("user able to select Jackets from Men module")
-public void user_able_to_select_jackets_from_men_module() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@When("user able to select a Jacket product's size, color, quantity")
-public void user_able_to_select_a_jacket_product_s_size_color_quantity() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@When("user able to click add to cart button")
-public void user_able_to_click_add_to_cart_button() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@When("user able to click on the shopping cart pop-up")
-public void user_able_to_click_on_the_shopping_cart_pop_up() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@When("user able to click on the proceed to checkout")
-public void user_able_to_click_on_the_proceed_to_checkout() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@When("user able to add shipping information")
-public void user_able_to_add_shipping_information() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@When("user able to select shipping method radial button and click on next button")
-public void user_able_to_select_shipping_method_radial_button_and_click_on_next_button() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@When("user able to click on the place order button")
-public void user_able_to_click_on_the_place_order_button() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-@Then("user able to verify the confirmation message {string}")
-public void user_able_to_verify_the_confirmation_message(String string) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 43.974 s <<< FAILURE! - in TestSuite
+luma.usa.myrunnertest.MyRunner.runScenario["user able to select the product, add to cart, add shipping information, place order, & verify the order confirmation number", "Optional[user able to purchase the product and verify the order confirmation]"](1)  Time elapsed: 43.177 s  <<< FAILURE!
+org.openqa.selenium.NoSuchWindowException: 
+no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=111.0.5563.65)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'HOMEDESKTOP2022', ip: '192.168.1.161', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.65, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: C:\Users\tanvi\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:50484}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a9669ef2132fa8e69b048ea326835b6e
+*** Element info: {Using=id, value=}
 
