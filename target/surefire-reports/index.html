@@ -131,13 +131,13 @@
                   <span class="parameters">("user able to select the product, add to cart, add shipping information, place order, & verify the order confirmation number", "Optional[user able to purchase the product and verify the order confirmation]")</span>
                   <div class="stack-trace">org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
 from unknown error: web view not found
-  (Session info: chrome=111.0.5563.65)
+  (Session info: chrome=111.0.5563.147)
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;HOMEDESKTOP2022&apos;, ip: &apos;192.168.1.161&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.1&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.65, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: C:\Users\tanvi\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:50484}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a9669ef2132fa8e69b048ea326835b6e
-*** Element info: {Using=id, value=}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.147, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: C:\Users\tanvi\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:60684}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d90652e0e289f20b68373ed61cab3e54
+*** Element info: {Using=xpath, value=//*[@id=&apos;DIGOJ00&apos;]}
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
@@ -145,8 +145,8 @@ Session ID: a9669ef2132fa8e69b048ea326835b6e
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
-	at org.openqa.selenium.By$ById.findElement(By.java:188)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
@@ -158,7 +158,7 @@ Session ID: a9669ef2132fa8e69b048ea326835b6e
 	at java.base/java.lang.StringBuilder.append(StringBuilder.java:169)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:268)
 	at luma.usa.genaricfunctions.WaitHelper.seleniumWait(WaitHelper.java:14)
-	at luma.usa.elementsPage.PageFactoryElements.addNewShippingDetails(PageFactoryElements.java:292)
+	at luma.usa.elementsPage.PageFactoryElements.addNewShippingDetails(PageFactoryElements.java:317)
 	at luma.usa.Stepdefination.FunctionalStepDef.user_able_to_add_shipping_information(FunctionalStepDef.java:80)
 	at ✽.user able to add shipping information(file:///C:/Users/tanvi/SDET_QA/HybridAutomationFramework/./Feature/FunctionalTest.feature:13)
 ... Removed 4 stack frames
@@ -233,12 +233,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'runScenario')
 data.setCell(0, 2, 'luma.usa.myrunnertest.MyRunner')
-data.setCell(0, 3, 43170);
+data.setCell(0, 3, 42686);
 window.suiteTableData['Suite1']= { tableData: data, tableDiv: 'times-div-Suite1'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 43 seconds</span>
+              <span class="suite-total-time">Total running time: 42 seconds</span>
               <div id="times-div-Suite1">
               </div> <!-- times-div-Suite1 -->
             </div> <!-- times-div -->
@@ -273,11 +273,11 @@ return data;
                 <img src="failed.png">
                 </img>
                 <span class="method-name">runScenario("user able to select the product, add to cart, add shipping information, place order, & verify the o...)</span>
-                <span class="method-start">201 ms</span>
+                <span class="method-start">227 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">43373 ms</span>
+                <span class="method-start">42915 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

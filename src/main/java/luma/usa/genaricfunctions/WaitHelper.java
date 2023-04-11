@@ -8,7 +8,7 @@ import luma.usa.BasePage.SuperClass;
 
 public class WaitHelper extends SuperClass{
 	
-	// 
+	// How to write webdriver wait & 
 	public static void seleniumWait(WebElement ele) {
 		WebDriverWait wait = new WebDriverWait(driver,30);
 		wait.until(ExpectedConditions.elementToBeClickable(ele));

@@ -159,7 +159,7 @@ public class PageFactoryElements extends SuperClass { // "extends" from SuperCla
 	}
 
 	// ------------adding new shipping address
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//*[@name='firstname']")
 	@CacheLookup
 
 	private WebElement EnterFirstName;
@@ -168,7 +168,7 @@ public class PageFactoryElements extends SuperClass { // "extends" from SuperCla
 		return EnterFirstName;
 	}
 
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//*[@name='lastname']")
 	@CacheLookup
 
 	private WebElement EnterLastName;
@@ -177,7 +177,7 @@ public class PageFactoryElements extends SuperClass { // "extends" from SuperCla
 		return EnterLastName;
 	}
 
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//*[@name='company']")
 	@CacheLookup
 
 	private WebElement EnterCompanyName;
@@ -186,7 +186,7 @@ public class PageFactoryElements extends SuperClass { // "extends" from SuperCla
 		return EnterCompanyName;
 	}
 
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//*[@name='street[0]']")
 	@CacheLookup
 
 	private WebElement EnterCustomerAddress;
@@ -195,7 +195,7 @@ public class PageFactoryElements extends SuperClass { // "extends" from SuperCla
 		return EnterCustomerAddress;
 	}
 
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//*[@name='city']")
 	@CacheLookup
 
 	private WebElement EnterCity;
@@ -204,7 +204,7 @@ public class PageFactoryElements extends SuperClass { // "extends" from SuperCla
 		return EnterCity;
 	}
 
-	@FindBy(xpath = "")
+	@FindBy(xpath = "(// *[@class='select'])[1]")
 	@CacheLookup
 
 	private WebElement SelectState;
@@ -213,7 +213,7 @@ public class PageFactoryElements extends SuperClass { // "extends" from SuperCla
 		return SelectState;
 	}
 
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//*[@id='DIGOJ00']")
 	@CacheLookup
 
 	private WebElement EnterZipCode;
@@ -222,7 +222,7 @@ public class PageFactoryElements extends SuperClass { // "extends" from SuperCla
 		return EnterZipCode;
 	}
 
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//*[@id='RJUS3B6']")
 	@CacheLookup
 
 	private WebElement SelectCountry;
@@ -231,16 +231,16 @@ public class PageFactoryElements extends SuperClass { // "extends" from SuperCla
 		return SelectCountry;
 	}
 
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//*[@id='U55A1K9']")
 	@CacheLookup
-
+// 
 	private WebElement EnterPhoneNumber;
 
 	public WebElement getEnterPhoneNumber() {//
 		return EnterPhoneNumber;
 	}
 
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//*[contains(text(),'Ship here')]")
 	@CacheLookup
 
 	private WebElement ClickOnShiphere;
@@ -249,7 +249,7 @@ public class PageFactoryElements extends SuperClass { // "extends" from SuperCla
 		return ClickOnShiphere;
 	}
 
-	@FindBy(xpath = "")
+	@FindBy(xpath = "(//*[@name='ko_unique_1'])[1]")
 	@CacheLookup
 
 	private WebElement SelectShippingMethod;
@@ -258,7 +258,7 @@ public class PageFactoryElements extends SuperClass { // "extends" from SuperCla
 		return SelectShippingMethod;
 	}
 
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//*[contains(text(),'Next')]")
 	@CacheLookup
 
 	private WebElement ClickNextBtn;
@@ -267,7 +267,7 @@ public class PageFactoryElements extends SuperClass { // "extends" from SuperCla
 		return ClickNextBtn;
 	}
 
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//*[contains(text(),'Place Order')]")
 	@CacheLookup
 
 	private WebElement ClickPlaceOrder;
@@ -291,33 +291,40 @@ public class PageFactoryElements extends SuperClass { // "extends" from SuperCla
 
 		WaitHelper.seleniumWait(getEnterFirstName());
 		getEnterFirstName().clear();
-		getEnterFirstName().sendKeys("");
+		getEnterFirstName().sendKeys("Tanu");
 
 		WaitHelper.seleniumWait(getEnterLastName());
 		getEnterLastName().clear();
-		getEnterLastName().sendKeys("");
+		getEnterLastName().sendKeys("Mohammad");
 
 		WaitHelper.seleniumWait(getEnterCompanyName());
 		getEnterCompanyName().clear();
-		getEnterCompanyName().sendKeys("");
+		getEnterCompanyName().sendKeys("Amazon");
 
 		WaitHelper.seleniumWait(getEnterCustomerAddress());
 		getEnterCustomerAddress().clear();
-		getEnterCustomerAddress().sendKeys("");
+		getEnterCustomerAddress().sendKeys("123 Main Street");
 
 		WaitHelper.seleniumWait(getEnterCity());
 		getEnterCity().clear();
-		getEnterCity().sendKeys("");
+		getEnterCity().sendKeys("Queens");
 
 		// selectState
+		CommonMethods.dropdownMenu(getSelectState(), "New York");
+		
+		
 		WaitHelper.seleniumWait(getEnterZipCode());
 		getEnterZipCode().clear();
-		getEnterZipCode().sendKeys("");
+		getEnterZipCode().sendKeys("11433");
+		
 		// Select country
+		WaitHelper.seleniumWait(getSelectCountry());
+		CommonMethods.actionClick(getSelectCountry());
+		
 
 		WaitHelper.seleniumWait(getEnterPhoneNumber());
 		getEnterPhoneNumber().clear();
-		getEnterPhoneNumber().sendKeys("");
+		getEnterPhoneNumber().sendKeys("645-202-5679");
 
 		WaitHelper.seleniumWait(getClickOnShiphere());
 		CommonMethods.actionClick(getClickOnShiphere());
@@ -326,10 +333,19 @@ public class PageFactoryElements extends SuperClass { // "extends" from SuperCla
 
 //------------------------------------
 	public void applicationLogin() {
-		getSignInBtn().click();
+		
+		WaitHelper.seleniumWait(getSignInBtn());
+		CommonMethods.actionClick(getSignInBtn());
+		
+		WaitHelper.seleniumWait(getEnterUserName());
 		getEnterUserName().sendKeys("dummypractice.qa@gmail.com");
+		
+		WaitHelper.seleniumWait(getEnterPassword());
 		getEnterPassword().sendKeys("Abc@2023");
-		getClickOnSignBtn().click();
+		
+		
+		WaitHelper.seleniumWait(getClickOnSignBtn());
+		CommonMethods.actionClick(getClickOnSignBtn());
 
 	}
 
