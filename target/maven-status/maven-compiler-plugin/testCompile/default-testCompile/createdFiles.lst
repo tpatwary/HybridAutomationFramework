@@ -1,3 +1,4 @@
+luma\usa\hooks\Hooks.class
 luma\usa\myrunnertest\MyRunner.class
 luma\usa\Stepdefination\SmokeTestStep.class
 luma\usa\Stepdefination\FunctionalStepDef.class

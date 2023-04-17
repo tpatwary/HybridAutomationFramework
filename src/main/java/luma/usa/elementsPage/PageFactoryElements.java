@@ -1,5 +1,7 @@
 package luma.usa.elementsPage;
 
+import java.util.List;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
@@ -213,7 +215,7 @@ public class PageFactoryElements extends SuperClass { // "extends" from SuperCla
 		return SelectState;
 	}
 
-	@FindBy(xpath = "//*[@id='DIGOJ00']")
+	@FindBy(xpath = "//*[@name='postcode']")
 	@CacheLookup
 
 	private WebElement EnterZipCode;
@@ -222,7 +224,7 @@ public class PageFactoryElements extends SuperClass { // "extends" from SuperCla
 		return EnterZipCode;
 	}
 
-	@FindBy(xpath = "//*[@id='RJUS3B6']")
+	@FindBy(xpath = "//*[@name='country_id']")
 	@CacheLookup
 
 	private WebElement SelectCountry;
@@ -231,7 +233,7 @@ public class PageFactoryElements extends SuperClass { // "extends" from SuperCla
 		return SelectCountry;
 	}
 
-	@FindBy(xpath = "//*[@id='U55A1K9']")
+	@FindBy(xpath = "//*[@name='telephone']")
 	@CacheLookup
 // 
 	private WebElement EnterPhoneNumber;
@@ -284,6 +286,67 @@ public class PageFactoryElements extends SuperClass { // "extends" from SuperCla
 	public WebElement getVerifyTextMessage() {//
 		return VerifyTextMessage;
 	}
+	@FindBy(xpath = "(//*[@class='radio'])[1]")
+	@CacheLookup
+
+	private WebElement ShippingMethod;
+
+	public WebElement getShippingMethod() {//
+		return ShippingMethod;
+	}
+	
+	
+	@FindBy(xpath = "//*[text()='Next']")
+	@CacheLookup
+
+	private WebElement ClickNext;
+
+	public WebElement getClickNext() {//
+		return ClickNext;
+	}
+	
+	//Place Order
+	
+	@FindBy(xpath = "//*[text()='Place Order']")
+	@CacheLookup
+
+	private WebElement placeOrder;
+
+	public WebElement getplaceOrder() {//
+		return placeOrder;
+	}
+	
+	//
+	@FindBy(xpath = "//*[text()='Thank you for your purchase!']")
+	@CacheLookup
+
+	private WebElement VerifyOrderConf;
+
+	public WebElement getVerifyOrderConf() {//
+		return VerifyOrderConf;
+	}
+	
+	//------------
+	// xpath for list of web elements 
+	@FindBy(xpath = "(// *[@class='select'])[1]/option")
+	@CacheLookup
+
+	private List<WebElement> selectListOfState;
+
+	public List<WebElement> getselectListOfState() {//
+		return selectListOfState;
+	}
+	
+	// xpath for list of web elements 
+		@FindBy(xpath = "(// *[@class='select'])[2]/option")
+		@CacheLookup
+
+		private List<WebElement> selectListOfCountry;
+
+		public List<WebElement> getselectListOfCountry() {//
+			return selectListOfCountry;
+		}
+
 
 	public void addNewShippingDetails() {
 		WaitHelper.seleniumWait(getAddNewAddress());
@@ -310,17 +373,18 @@ public class PageFactoryElements extends SuperClass { // "extends" from SuperCla
 		getEnterCity().sendKeys("Queens");
 
 		// selectState
+		//WaitHelper.waitUntilVisibelityOfElements(getselectListOfState());
 		CommonMethods.dropdownMenu(getSelectState(), "New York");
-		
+		//CommonMethods.handledropdown(getselectListOfState(), "New York");
 		
 		WaitHelper.seleniumWait(getEnterZipCode());
 		getEnterZipCode().clear();
 		getEnterZipCode().sendKeys("11433");
 		
 		// Select country
-		WaitHelper.seleniumWait(getSelectCountry());
+		//WaitHelper.waitUntilVisibelityOfElements(getselectListOfCountry());
 		CommonMethods.actionClick(getSelectCountry());
-		
+		//CommonMethods.handledropdown(getselectListOfCountry(), "United States");
 
 		WaitHelper.seleniumWait(getEnterPhoneNumber());
 		getEnterPhoneNumber().clear();
