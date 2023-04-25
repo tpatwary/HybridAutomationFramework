@@ -2,6 +2,7 @@ package luma.usa.elementsPage;
 
 import java.util.List;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
@@ -11,7 +12,7 @@ import luma.usa.BasePage.SuperClass;
 import luma.usa.genaricfunctions.CommonMethods;
 import luma.usa.genaricfunctions.WaitHelper;
 
-public class PageFactoryElements extends SuperClass { // "extends" from SuperClass java inheritance concept
+public class PageFactoryElements extends SuperClass  { // "extends" from SuperClass java inheritance concept
 
 	public PageFactoryElements() {
 		PageFactory.initElements(driver, this); // this (current class property or elements) is java reserve keyword &
@@ -402,10 +403,10 @@ public class PageFactoryElements extends SuperClass { // "extends" from SuperCla
 		CommonMethods.actionClick(getSignInBtn());
 		
 		WaitHelper.seleniumWait(getEnterUserName());
-		getEnterUserName().sendKeys("dummypractice.qa@gmail.com");
+		getEnterUserName().sendKeys(prop.getProperty("userName"));
 		
 		WaitHelper.seleniumWait(getEnterPassword());
-		getEnterPassword().sendKeys("Abc@2023");
+		getEnterPassword().sendKeys(prop.getProperty("passWord"));
 		
 		
 		WaitHelper.seleniumWait(getClickOnSignBtn());

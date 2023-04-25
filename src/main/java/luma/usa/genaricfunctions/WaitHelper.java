@@ -1,5 +1,6 @@
 package luma.usa.genaricfunctions;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.openqa.selenium.WebElement;
@@ -10,6 +11,11 @@ import luma.usa.BasePage.SuperClass;
 
 public class WaitHelper extends SuperClass{
 	
+	public WaitHelper() throws IOException {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	// How to write webdriver wait & 
 	// single element
 	public static void seleniumWait(WebElement ele) {

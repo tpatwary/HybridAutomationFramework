@@ -1,11 +1,5 @@
 package luma.usa.Stepdefination;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
 import io.cucumber.java.en.*;
@@ -16,20 +10,20 @@ import luma.usa.genaricfunctions.CommonMethods;
 import luma.usa.genaricfunctions.WaitHelper;
 
 public class FunctionalStepDef extends SuperClass {
+
 	PageFactoryElements pf;
 
 	@Given("user able to login the application")
 	public void user_able_to_login_the_application() throws InterruptedException {
-	
+
 		pf = new PageFactoryElements();
 		pf.applicationLogin();
-		
-	
+
 	}
 
 	@When("user able to select Jackets from Men module")
 	public void user_able_to_select_jackets_from_men_module() {
-		
+
 		log.info(">>>>> User able to select Men module <<<<< ");
 		WaitHelper.seleniumWait(pf.getSelectMenModule());
 		CommonMethods.HoverOver(pf.getSelectMenModule());
@@ -49,7 +43,7 @@ public class FunctionalStepDef extends SuperClass {
 
 		log.info(">>>>> user able to select a Jacket<<<<< ");
 		CommonMethods.actionClick(pf.getSelectJupiterAll_WeatherTrainer());
-		
+
 		log.info(">>>>> user able to select a Jacket size <<<<< ");
 		WaitHelper.seleniumWait(pf.getSelectSize());
 		CommonMethods.actionClick(pf.getSelectSize());
@@ -84,7 +78,6 @@ public class FunctionalStepDef extends SuperClass {
 
 	@When("user able to click on the proceed to checkout")
 	public void user_able_to_click_on_the_proceed_to_checkout() {
-		
 
 		log.info(">>>>> user able to click on the proceed to checkout<<<<< ");
 		WaitHelper.seleniumWait(pf.getProceed_to_Checkout());
@@ -93,7 +86,7 @@ public class FunctionalStepDef extends SuperClass {
 
 	@When("user able to add shipping information")
 	public void user_able_to_add_shipping_information() {
-		
+
 		log.info(">>>>> user able to add shipping information <<<<< ");
 
 		pf.addNewShippingDetails();
@@ -119,7 +112,7 @@ public class FunctionalStepDef extends SuperClass {
 
 	@When("user able to click on the place order button")
 	public void user_able_to_click_on_the_place_order_button() {
-		
+
 		log.info(">>>>> user able to click on the place order button <<<<< ");
 		WaitHelper.seleniumWait(pf.getplaceOrder());
 		CommonMethods.jsClick(pf.getplaceOrder());
