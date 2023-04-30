@@ -9,7 +9,7 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-public class ReadexalData {
+public class ReadexcelData {
 
 	// How to read excel in your automation framework? **********
 	public static void main(String[] args) throws IOException {
