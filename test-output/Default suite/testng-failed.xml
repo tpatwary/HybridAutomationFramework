@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="luma.usa.myrunnertest.MyRunner">
+      <class name="com.testNGAnnotation.CrossBrowserTesting">
         <methods>
-          <include name="runScenario" invocation-numbers="0"/>
-          <include name="tearDownClass"/>
-          <include name="setUpClass"/>
+          <include name="TearDown"/>
+          <include name="SetUp"/>
+          <include name="getTest"/>
         </methods>
-      </class> <!-- luma.usa.myrunnertest.MyRunner -->
+      </class> <!-- com.testNGAnnotation.CrossBrowserTesting -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
