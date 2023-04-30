@@ -1,4 +1,14 @@
-luma\usa\hooks\Hooks.class
-luma\usa\myrunnertest\MyRunner.class
-luma\usa\Stepdefination\SmokeTestStep.class
+com\testNGAnnotation\EnableEqualeTrue_False.class
+com\testNGAnnotation\PriorityTest.class
+com\testNGAnnotation\ReadexalData.class
+com\testNGAnnotation\InvocationCountTest.class
 luma\usa\Stepdefination\FunctionalStepDef.class
+com\testNGAnnotation\DataProviderTest.class
+com\testNGAnnotation\CrossBrowserTesting.class
+com\testNGAnnotation\AnnotationExecuation.class
+luma\usa\Stepdefination\SmokeTestStep.class
+com\testNGAnnotation\TestNgBasicAnnotation.class
+com\testNGAnnotation\TestNGDependsON_Method.class
+luma\usa\hooks\Hooks.class
+com\testNGAnnotation\ParallalTesting.class
+luma\usa\myrunnertest\MyRunner.class
